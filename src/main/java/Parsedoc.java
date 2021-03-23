@@ -20,7 +20,7 @@ public class Parsedoc {
                 System.out.println(DateCrea);
                 String CodeIden = docres.substring(20,21);
                 System.out.println(CodeIden);
-                new Code2d(MI ,Integer.parseInt(version1) ,IAC ,IC ,DateEm ,DateCrea ,CodeIden);
+                res = new Code2d(MI ,Integer.parseInt(version1) ,IAC ,IC ,DateEm ,DateCrea ,CodeIden);
             case 02:
                 String MI2 = docres.substring(0, 1);
                 System.out.println(MI2);
@@ -36,7 +36,7 @@ public class Parsedoc {
                 System.out.println(DateCrea2);
                 String CodeIden2 = docres.substring(20,21);
                 System.out.println(CodeIden2);
-                new Code2d(MI2 ,Integer.parseInt(version2) ,IAC2 ,IC2 ,DateEm2 ,DateCrea2 ,CodeIden2);
+                res = new Code2d(MI2 ,Integer.parseInt(version2) ,IAC2 ,IC2 ,DateEm2 ,DateCrea2 ,CodeIden2);
                 break;
             case 03:
                 String MI3 = docres.substring(0, 1);
@@ -55,7 +55,7 @@ public class Parsedoc {
                 System.out.println(CodeIden3);
                 String identifPerim3 = docres.substring(22,23);
                 System.out.println(identifPerim3);
-                new Code2d(MI3 ,Integer.parseInt(version3) ,IAC3 ,IC3 ,DateEm3 ,DateCrea3 ,CodeIden3,identifPerim3);
+                res = new Code2d(MI3 ,Integer.parseInt(version3) ,IAC3 ,IC3 ,DateEm3 ,DateCrea3 ,CodeIden3,identifPerim3);
                 break;
             case 04:
                 String MI4 = docres.substring(0, 1);
@@ -76,7 +76,7 @@ public class Parsedoc {
                 System.out.println(IdentifPerim4);
                 String PaysEm4 = docres.substring(24,25);
                 System.out.println(PaysEm4);
-                new Code2d(MI4 ,Integer.parseInt(version4) ,IAC4 ,IC4 ,DateEm4 ,DateCrea4 ,CodeIden4 ,IdentifPerim4 ,PaysEm4 );
+                res = new Code2d(MI4 ,Integer.parseInt(version4) ,IAC4 ,IC4 ,DateEm4 ,DateCrea4 ,CodeIden4 ,IdentifPerim4 ,PaysEm4 );
                 break;
         }
 
