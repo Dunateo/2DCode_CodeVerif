@@ -1,3 +1,5 @@
+import com.nimbusds.jose.util.X509CertUtils;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,14 +10,25 @@ import java.util.Base64;
 
 public class Certificate {
 
-    public static Boolean verification(X509Certificate sign, String cert) throws CertificateException, IOException {
+    /**
+     * Verification d'un certificat
+     * @param sign
+     * @param cert
+     * @return
+     * @throws CertificateException
+     * @throws IOException
+     */
+    public static Boolean verification(X509Certificate sign, X509Certificate cert) throws CertificateException, IOException {
 
-        X509Certificate certf = generateX509Certificate(cert);
-
-        return Boolean.FALSE;
+        return cert.equals(sign);
     }
 
-
+    /**
+     * Conversion d'un string en certficat
+     * @param certEntry
+     * @return
+     * @throws IOException
+     */
     public static X509Certificate generateX509Certificate(String certEntry) throws IOException {
 
         InputStream in = null;
@@ -35,4 +48,15 @@ public class Certificate {
         }
         return cert;
     }
+
+    /**
+     * convert .der to X509
+     * @param encodedCert
+     * @return
+     */
+    public static X509Certificate generateX509withBinary(byte[] encodedCert){
+        return X509CertUtils.parse(encodedCert);
+    }
+
+
 }
