@@ -1,5 +1,4 @@
 import com.google.zxing.NotFoundException;
-
 import java.io.IOException;
 import java.net.URL;
 
