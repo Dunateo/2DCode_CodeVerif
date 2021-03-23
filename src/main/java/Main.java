@@ -9,6 +9,7 @@ public class Main {
         String Qrstring = ReadQR.decodeQRCode(url);
 
 
+
         System.out.println(Qrstring);
     }
 }
