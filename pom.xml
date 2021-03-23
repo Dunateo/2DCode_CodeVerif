@@ -25,6 +25,13 @@
             <artifactId>javase</artifactId>
             <version>3.3.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.github.leeyazhou.chilkat</groupId>
+            <artifactId>chilkat</artifactId>
+            <version>9.5.0</version>
+        </dependency>
+
     </dependencies>
 
 
