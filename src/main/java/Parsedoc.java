@@ -1,8 +1,7 @@
 public class Parsedoc {
 
-    public Code2d parseDdoc(String docres) {
-
-
+    public static Code2d parseDdoc(String docres) {
+        Code2d res = null;
         String version = docres.substring(3, 4);
         System.out.println(version);
         switch (Integer.parseInt(version)) {
@@ -81,6 +80,6 @@ public class Parsedoc {
                 break;
         }
 
-
+        return res;
     }
 }
