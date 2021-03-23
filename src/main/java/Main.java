@@ -11,6 +11,8 @@ public class Main {
 
         Code2d entete = Parsedoc.parseDdoc(Qrstring);
 
+        
+
         System.out.println(Qrstring);
     }
 }
