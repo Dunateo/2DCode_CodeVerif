@@ -104,7 +104,7 @@ public class Parsedoc {
      */
     public static String[] parseTSL(String File, String IAC, String IC) {
         String[] res = {null,null};
-        int ca_number = Integer.parseInt(IAC.substring(2,3));
+        int ca_number = Integer.parseInt(IAC.substring(2,4));
         try {
             java.io.File file = new File(File);
 

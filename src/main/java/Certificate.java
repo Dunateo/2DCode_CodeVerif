@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.GeneralSecurityException;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
@@ -23,7 +24,13 @@ public class Certificate {
      */
     public static Boolean verification(X509Certificate sign, X509Certificate cert) throws CertificateException, IOException {
 
-        return cert.equals(sign);
+        if (!cert.getIssuerDN().equals(sign.getSubjectDN())) return false;
+        try {
+            cert.verify(sign.getPublicKey());
+            return true;
+        } catch (GeneralSecurityException verifyFailed) {
+            return false;
+        }
     }
 
     /**
