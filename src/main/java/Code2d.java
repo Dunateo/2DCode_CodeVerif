@@ -87,4 +87,19 @@ public class Code2d {
     public void setZoneMessage(String zoneMessage) {
         this.zoneMessage = zoneMessage;
     }
+
+    public void affichage(){
+        System.out.println("------En-tête------");
+        System.out.println("MI: "+this.getMI());
+        System.out.println("Version: "+getVersion());
+        System.out.println("IAC: "+getIAC());
+        System.out.println("IC: "+getIC());
+        System.out.println("DATE-Emission: "+getDateEm());
+        System.out.println("DATE-Creation: "+getDateCrea());
+        System.out.println("CodeIdentification: "+getCodeIden());
+        System.out.println("Identifi Perim: "+getIdentifPerim());
+        System.out.println("Pays Emission: "+getPaysEm());
+        System.out.println("Zone Message: "+getZoneMessage());
+        System.out.println("------Verification------");
+    }
 }
