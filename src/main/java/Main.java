@@ -28,7 +28,7 @@ public class Main {
         X509Certificate cert2 = Certificate.generateX509withBinary(url2);
 
 
-        //System.out.println(Qrstring);
+        System.out.println(Qrstring);
         entete.affichage();
         System.out.println(Certificate.verification(cert,cert2));
     }
