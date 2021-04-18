@@ -9,6 +9,12 @@ public class Code2d {
    private String IdentifPerim;
    private String PaysEm;
    private String zoneMessage;
+   private String Username;
+   private String Userfirstname;
+   private String Address;
+   private String Town;
+
+    private String Sign;
 
     //V01-02
     public Code2d(String MI, int version, String IAC, String IC, String dateEm, String dateCrea, String codeIden) {
@@ -43,6 +49,8 @@ public class Code2d {
         IdentifPerim = identifPerim;
         PaysEm = paysEm;
     }
+
+
 
     public String getMI() {
         return MI;
@@ -84,6 +92,16 @@ public class Code2d {
         return zoneMessage;
     }
 
+    public void setUsername(String username) { Username = username; }
+
+    public void setUserfirstname(String userfirstname) { Userfirstname = userfirstname; }
+
+    public void setAddress(String address) { Address = address; }
+
+    public void setTown(String town) { Town = town; }
+
+    public void setSign(String sign) { Sign = sign; }
+
     public void setZoneMessage(String zoneMessage) {
         this.zoneMessage = zoneMessage;
     }
@@ -100,6 +118,11 @@ public class Code2d {
         System.out.println("Identifi Perim: "+getIdentifPerim());
         System.out.println("Pays Emission: "+getPaysEm());
         System.out.println("Zone Message: "+getZoneMessage());
+        System.out.println("Name of the user: "+Username);
+        System.out.println("Firstname of the user: "+Userfirstname);
+        System.out.println("Address of the user: "+Address);
+        System.out.println("Town of the user: "+Town);
+        System.out.println("Signature: "+Sign);
         System.out.println("------Verification------");
     }
 }

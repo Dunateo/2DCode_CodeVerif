@@ -92,8 +92,32 @@ public class Parsedoc {
                 break;
         }
 
+
+
+        int debut = docres.indexOf("/");
+        int fin = docres.lastIndexOf("/");
+        res.setUsername(docres.substring(debut+1,fin));
+
+        int debut1 = docres.lastIndexOf("/");
+        int fin1 = docres.indexOf("\u001D");
+        res.setUserfirstname(docres.substring(debut1+1,fin1));
+
+
+        String result[] = docres.split("\u001D");
+
+
+        res.setAddress(result[result.length - 4]);
+        res.setTown(result[result.length - 3]);
+
+
+        char US = (char) 31;
+        res.setSign(docres.substring(docres.lastIndexOf(US) + 1));
+
+        System.out.println(docres.substring(docres.lastIndexOf(US) + 1));
+
         return res;
     }
+
 
     /**
      * Parse Tsl Thing
