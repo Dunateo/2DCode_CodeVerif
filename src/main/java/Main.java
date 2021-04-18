@@ -35,12 +35,12 @@ public class Main {
 
         //Signature Verfication Invalid encoding ?
         PublicKey pubKey = cert2.getPublicKey();
-        System.out.println(pubKey);
+        //System.out.println(pubKey);
         char US = (char) 31;
         String truc = Qrstring.substring(Qrstring.lastIndexOf(US) + 1);
         String data = Qrstring.substring(0,Qrstring.lastIndexOf(US)-1);
         //System.out.println(truc.length());
-        System.out.println(data);
+        //System.out.println(data);
         switch (truc.length()){
             case 103:
                 //Base32 base32 = new Base32();
@@ -58,7 +58,7 @@ public class Main {
 
 
 
-        System.out.println(Qrstring);
+        //System.out.println(Qrstring);
         entete.affichage();
         System.out.println(Certificate.verification(cert,cert2));
     }
