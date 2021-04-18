@@ -6,10 +6,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.security.GeneralSecurityException;
+import java.nio.charset.StandardCharsets;
+import java.security.*;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.security.spec.ECGenParameterSpec;
 import java.util.Base64;
 
 public class Certificate {
@@ -86,6 +88,15 @@ public class Certificate {
         return (X509Certificate) CertificateFactory
                 .getInstance("X509")
                 .generateCertificate(targetStream);
+    }
+
+    public static boolean decipherSignP256(PublicKey pubKey, String cipher, byte[] data) throws NoSuchProviderException, NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+        //byte[] dataConvert = data.getBytes(StandardCharsets.UTF_8);
+        byte[] sign = cipher.getBytes();
+        Signature sg = Signature.getInstance("SHA256withECDSA", "SunEC");
+        sg.initVerify(pubKey);
+        sg.update(data);
+        return sg.verify(sign);
     }
 
 

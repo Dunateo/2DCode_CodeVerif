@@ -1,4 +1,10 @@
+import com.google.zxing.common.StringUtils;
+import org.apache.commons.codec.binary.Base32;
+import org.apache.commons.codec.binary.Base64;
+
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.security.PublicKey;
 import java.security.cert.X509Certificate;
 
 
@@ -27,8 +33,32 @@ public class Main {
         X509Certificate cert = Certificate.convertStringToX509Cert(xmlCert);
         X509Certificate cert2 = Certificate.generateX509withBinary(url2);
 
+        //Signature Verfication Invalid encoding ?
+        PublicKey pubKey = cert2.getPublicKey();
+        System.out.println(pubKey);
+        char US = (char) 31;
+        String truc = Qrstring.substring(Qrstring.lastIndexOf(US) + 1);
+        String data = Qrstring.substring(0,Qrstring.lastIndexOf(US)-1);
+        //System.out.println(truc.length());
+        System.out.println(data);
+        switch (truc.length()){
+            case 103:
+                //Base32 base32 = new Base32();
+                //byte[] mes = base32.encode(data.getBytes(StandardCharsets.UTF_8));
+                //System.out.println(Certificate.decipherSignP256(pubKey,truc,mes));
+                break;
+            case 154:
+                break;
+            case 212:
+                break;
+        }
 
-        //System.out.println(Qrstring);
+
+
+
+
+
+        System.out.println(Qrstring);
         entete.affichage();
         System.out.println(Certificate.verification(cert,cert2));
     }
